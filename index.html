@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>SmartCart AI</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+    <div class="page">
+        <nav class="topbar">
+            <div class="brand">SmartCart AI</div>
+            <ul class="nav">
+                <li>Home</li>
+                <li>Features</li>
+                <li>How It Works</li>
+                <li>Contact</li>
+            </ul>
+            <div class="nav-actions">
+                <button id="theme-toggle" aria-label="Toggle theme">🌙</button>
+            </div>
+        </nav>
+
+        <header class="hero">
+            <div class="hero-left">
+                <p class="eyebrow">AI-powered shopping assistant</p>
+                <h1 class="hero-title">Find the Best Deal in Seconds</h1>
+                <p class="hero-copy">SmartCart AI compares prices, reviews, discounts and delivery across multiple
+                    shopping websites using AI.</p>
+
+                <form id="scrape-form" class="search-form">
+                    <input id="product-url" type="text" placeholder="Search products (e.g. iPhone 15)" required />
+                    <button type="submit" class="cta">Compare Now</button>
+                </form>
+
+                <div class="features">
+                    <div class="feature">Price Comparison</div>
+                    <div class="feature">AI Recommendation</div>
+                    <div class="feature">Review Analysis</div>
+                    <div class="feature">Fast Delivery Detection</div>
+                </div>
+            </div>
+
+            <aside class="hero-right">
+                <div class="best-deal" id="best-deal">
+                    <div class="badge">Best Deal For You</div>
+                    <div class="deal-content">
+                        <div class="deal-image" id="deal-image"> </div>
+                        <div class="deal-info">
+                            <div class="deal-title" id="deal-title">No product yet</div>
+                            <div class="deal-sub" id="deal-sub">Search a product to see recommendations</div>
+                            <div class="deal-stats">
+                                <div class="stat">
+                                    <div class="stat-label">Best Price</div>
+                                    <div class="stat-value" id="deal-price">-</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-label">Rating</div>
+                                    <div class="stat-value" id="deal-rating">-</div>
+                                </div>
+                                <div class="stat">
+                                    <div class="stat-label">Delivery</div>
+                                    <div class="stat-value" id="deal-delivery">-</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="deal-table" id="deal-table">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Website</th>
+                                    <th>Price</th>
+                                    <th>Rating</th>
+                                    <th>Delivery</th>
+                                </tr>
+                            </thead>
+                            <tbody id="deal-rows">
+                                <tr>
+                                    <td colspan="4">No data</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <div class="ai-reco" id="ai-reco">AI Recommendation will appear here.</div>
+                </div>
+            </aside>
+        </header>
+
+        <main class="container">
+            <section class="results-panel">
+                <div id="status" class="status idle">Enter a product name to start comparing.</div>
+                <div id="results" class="results-grid"></div>
+            </section>
+        </main>
+    </div>
+
+    <script src="app.js"></script>
+</body>
+
+</html>
